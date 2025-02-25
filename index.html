@@ -318,8 +318,8 @@ layout: page
         });
     
         function handleFile(file) {
-            if (!file || !file.type.startsWith('image/') || !/\.(jpg|jpeg|png)$/i.test(file.name)) {
-                alert("Please upload a valid image file (JPG, JPEG, PNG).");
+            if (!file || !file.type.startsWith('image/') || !/\.(jpg|jpeg|png|webp)$/i.test(file.name)) {
+                alert("Please upload a valid image file (JPG, JPEG, PNG, WEBP).");
                 return;
             }
     
@@ -355,6 +355,9 @@ layout: page
                 const result = await client.predict("/predict", { 
                     img: imageBlob, 
                 });
+    
+                // Log the full API response for debugging
+                console.log("API Response:", result);
     
                 // Display the result
                 if (result.data && result.data.confidences && result.data.confidences.length > 0) {
