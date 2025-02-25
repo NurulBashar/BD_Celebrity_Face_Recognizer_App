@@ -330,7 +330,7 @@ layout: page
                 imagePreview.style.display = 'block';
                 uploadText.style.display = 'none';
                 analyzeBtn.style.display = 'block';
-                createParticles(window.innerWidth/2, window.innerHeight/2);
+                createParticles(window.innerWidth / 2, window.innerHeight / 2);
             };
             reader.readAsDataURL(file);
         }
@@ -352,8 +352,8 @@ layout: page
                 const client = await Client.connect("Bashar306/Face_recognition");
     
                 // Send the image to the API for prediction
-                const result = await client.predict("/predict", { 
-                    img: imageBlob, 
+                const result = await client.predict("/predict", {
+                    img: imageBlob,
                 });
     
                 // Log the full API response for debugging
@@ -361,8 +361,9 @@ layout: page
     
                 // Display the result
                 if (result.data && result.data.confidences && result.data.confidences.length > 0) {
-                    const highestConfidence = result.data.confidences.reduce((max, item) => 
-                        item.confidence > max.confidence ? item : max, 
+                    // Find the prediction with the highest confidence
+                    const highestConfidence = result.data.confidences.reduce((max, item) =>
+                        item.confidence > max.confidence ? item : max,
                         result.data.confidences[0]
                     );
                     resultDiv.textContent = `PREDICTION: ${highestConfidence.label.toUpperCase()}`;
