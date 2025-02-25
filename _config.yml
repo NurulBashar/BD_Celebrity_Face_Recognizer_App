@@ -1,0 +1,13 @@
+theme: jekyll-theme-primer
+plugins:
+  - jekyll-seo-tag
+
+# Add baseurl if using project site
+baseurl: /Face_app  # Your repository name
+url: https://nurulbashar.github.io
+
+title: BD Celebrity Face Recognizer
+description: An image classification API that classifies 19 different types of Bangladeshi Celebrity Face.
+
+author:
+  name: Nurul Bashar
