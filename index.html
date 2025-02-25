@@ -352,21 +352,21 @@ layout: page
                 const client = await Client.connect("Bashar306/Face_recognition");
     
                 // Send the image to the API for prediction
-                const result = await client.predict("/predict", {
-                    img: imageBlob,
+                const result = await client.predict("/predict", { 
+                    img: imageBlob, 
                 });
     
                 // Log the full API response for debugging
                 console.log("API Response:", result);
     
                 // Display the result
-                if (result.data && result.data.confidences && result.data.confidences.length > 0) {
+                if (result.data && result.data[0] && result.data[0].confidences && result.data[0].confidences.length > 0) {
                     // Find the prediction with the highest confidence
-                    const highestConfidence = result.data.confidences.reduce((max, item) =>
-                        item.confidence > max.confidence ? item : max,
-                        result.data.confidences[0]
+                    const highestConfidence = result.data[0].confidences.reduce((max, item) => 
+                        item.confidence > max.confidence ? item : max, 
+                        result.data[0].confidences[0]
                     );
-                    resultDiv.textContent = `PREDICTION: ${highestConfidence.label.toUpperCase()}`;
+                    resultDiv.textContent = `PREDICTION: ${highestConfidence.label.toUpperCase()} (Confidence: ${(highestConfidence.confidence * 100).toFixed(2)}%)`;
                 } else {
                     resultDiv.textContent = "NO CLEAR PREDICTION FOUND";
                 }
