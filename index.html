@@ -356,6 +356,50 @@
         .recognizer-container {
             display: none;
         }
+
+        /* Innovator Name */
+        .innovator-name {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .upload-container {
+                width: 90%;
+                padding: 2rem 1rem;
+            }
+
+            .app-description {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            .celebrities-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .celebrity-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .celebrity-name {
+                font-size: 1.2rem;
+            }
+
+            .celebrity-info {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -369,7 +413,6 @@
         <h1>📸 Bangladeshi Celebrity Face Recognizer 🌟</h1>
         
         <div class="app-description">
-            
             <p>
                 Welcome to the Bangladeshi Celebrity Face Recognizer! This innovative system leverages cutting-edge AI technology to accurately identify and recognize the faces of <strong>19 iconic Bangladeshi celebrities</strong> from various sectors, including film, music, sports, and television. Whether you're a fan or just curious, this tool is designed to bring you closer to the stars of Bangladesh.
             </p>
@@ -390,7 +433,7 @@
             </p>
         </div>
         
-                <div class="action-button" id="try-recognizer-btn" style="text-align: center;">TRY THE RECOGNIZER NOW</div>
+        <div class="action-button" id="try-recognizer-btn" style="text-align: center;">TRY THE RECOGNIZER NOW</div>
 
         <br>
 
@@ -430,7 +473,7 @@
             <div class="celebrity-card">
                 <img src="Muhammad_Yunus.jpg" alt="Portrait of Dr. Muhammad Yunus" class="celebrity-image">
                 <div class="celebrity-name">Dr. Muhammad Yunus</div>
-                <div class="celebrity-info">Dr. Muhammad Yunus is a Nobel Peace Prize-winning economist and founder of the Grameen Bank.</div>
+                <div class="celebrity-info">Dr. Muhammad Yunus, a Nobel Peace Prize-winning economist, founded Grameen Bank to provide microcredit to the poor, transforming millions of lives. He also served as an advisor to Bangladesh's interim government and pioneered social business, inspiring global efforts for inclusive development.</div>
             </div>
             
             <div class="celebrity-card">
@@ -533,6 +576,9 @@
             <button class="action-button" id="go-home-btn">← BACK TO HOME</button>
         </div>
     </div>
+
+    <!-- Innovator Name -->
+    <div class="innovator-name">Innovator: Nurul Bashar</div>
 
     <script type="module">
         import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
