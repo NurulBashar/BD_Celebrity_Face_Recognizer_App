@@ -52,16 +52,17 @@ To ensure precision and reliability, the system currently supports 19 celebritie
 ## 📂 Repository Structure
 
 ### 🗂 Data Collection & Processing
-![Data Collection Folder](Data_collection_&_process_code/)
+[📁 Data Collection Folder](Data_collection_&_process_code/)
 
 ### 🚀 Deployment (Hugging Face)
-![Deployment Folder](deployment/)
+[📁 Deployment Folder](deployment/)
 
 ### 📄 GitHub Pages Documentation
-![Docs Folder](docs/)
+[📁 Docs Folder](docs/)
 
 ### 🔍 Hugging Face Deployment Sample
 ![Hugging Face Sample](deployment/hugging_face_sample.png)
+
 
 
 
