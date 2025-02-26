@@ -47,7 +47,7 @@ To ensure precision and reliability, the system currently supports 19 celebritie
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen?logo=github)](https://nurulbashar.github.io/BD_Celebrity_Face_Recognizer_App/)  
 [![Data Drive](https://img.shields.io/badge/Data-Drive-yellow?logo=google-drive)](https://drive.google.com/drive/folders/1NIWH9alphiiRQ4iEoVDN8Xh5zb2WVx2X?usp=drive_link)  
 [![Test Images](https://img.shields.io/badge/Test%20Images-Drive-orange?logo=google-drive)](https://drive.google.com/drive/folders/13VrOatFw87CqryCL-gUe8dkJU-Z-3ViN?usp=drive_link)  
-[![Model Checkpoints](https://img.shields.io/badge/Model%20Checkpoints-Drive-red?logo=google-drive)](https://drive.google.com/drive/folders/1ar0r531_i2ZZfFklnNg680jaQcqPlriL?usp=drive_link)  
+ 
 
 ## 📂 Repository Structure
 
