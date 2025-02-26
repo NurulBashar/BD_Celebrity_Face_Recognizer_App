@@ -61,7 +61,11 @@ To ensure precision and reliability, the system currently supports 19 celebritie
 [![Docs Folder](docs/sample_image.png)](docs/)
 
 ### 🔍 Hugging Face Deployment Sample
-![Hugging Face Sample](hugging_face_sample.png)
+![Hugging Face Sample](deployment/hugging_face_sample.png)
+
+<p align="center">
+  <img src="deployment/hugging_face_sample.png" width="700" style="border-radius:10px;box-shadow:0 2px 15px #0003">
+</p>
 
 
 ## 🛠️ Model Training
