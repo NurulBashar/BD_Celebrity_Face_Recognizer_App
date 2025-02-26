@@ -50,10 +50,19 @@ To ensure precision and reliability, the system currently supports 19 celebritie
 [![Model Checkpoints](https://img.shields.io/badge/Model%20Checkpoints-Drive-red?logo=google-drive)](https://drive.google.com/drive/folders/1ar0r531_i2ZZfFklnNg680jaQcqPlriL?usp=drive_link)  
 
 ## 📂 Repository Structure
-- **`Data_collection_&_process_code/`** → All data collection and preprocessing code.
-- **`deployment/`** → Hugging Face deployment-related code and necessary documents.
-- **`docs/`** → GitHub Pages deployment-related code and documents.
-- **`hugging_face_sample.png`** → Sample image of Hugging Face deployment.
+
+### 🗂 Data Collection & Processing
+[![Data Collection Folder](Data_collection_&_process_code/sample_image.png)](Data_collection_&_process_code/)
+
+### 🚀 Deployment (Hugging Face)
+[![Deployment Folder](deployment/sample_image.png)](deployment/)
+
+### 📄 GitHub Pages Documentation
+[![Docs Folder](docs/sample_image.png)](docs/)
+
+### 🔍 Hugging Face Deployment Sample
+![Hugging Face Sample](hugging_face_sample.png)
+
 
 ## 🛠️ Model Training
 - The model is trained using **FastAI ResNet34**.
