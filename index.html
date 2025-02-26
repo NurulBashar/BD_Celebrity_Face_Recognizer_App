@@ -1,22 +1,18 @@
----
-title: BD Celebrity Face Recognizer 
-layout: page
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bangladeshi Celebrity Face Recognizer</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Audiowide&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Cosmic Base */
+        /* Modern Base */
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: 
-                radial-gradient(circle at 50% 50%, #000000 0%, #1b0035 30%, #3a005f 70%),
-                linear-gradient(45deg, #ff00ff22 25%, #00ffff22 50%, #ff00ff22 75%);
+                radial-gradient(circle at 50% 50%, #1a1a2e 0%, #16213e 30%, #0f3460 70%),
+                linear-gradient(45deg, #e94560 25%, #00bcd4 50%, #e94560 75%);
             color: white;
             text-align: center;
             margin: 0;
@@ -32,9 +28,10 @@ layout: page
             100% { background-size: 100% 100%, 200% 200%; }
         }
 
-        /* Trippy Title */
+        /* Futuristic Title */
         h1 {
-            font-size: 3rem;
+            font-family: 'Audiowide', cursive;
+            font-size: 3.5rem;
             text-transform: uppercase;
             margin: 2rem 0;
             position: relative;
@@ -44,25 +41,25 @@ layout: page
         }
 
         @keyframes title-glow {
-            0%, 100% { text-shadow: 0 0 15px #00ffcc, 0 0 30px #ff00ff; }
-            50% { text-shadow: 0 0 30px #ff0000, 0 0 60px #0000ff; }
+            0%, 100% { text-shadow: 0 0 15px #00bcd4, 0 0 30px #e94560; }
+            50% { text-shadow: 0 0 30px #e94560, 0 0 60px #00bcd4; }
         }
 
         @keyframes color-cycle {
-            0% { color: #ff00ff; }
-            25% { color: #00ffff; }
-            50% { color: #ff0000; }
-            75% { color: #00ff00; }
-            100% { color: #ff00ff; }
+            0% { color: #e94560; }
+            25% { color: #00bcd4; }
+            50% { color: #ff6f61; }
+            75% { color: #00bcd4; }
+            100% { color: #e94560; }
         }
 
-        /* Hypnotic Upload Container */
+        /* Modern Upload Container */
         .upload-container {
             width: 80%;
             max-width: 600px;
             margin: 2rem auto;
             padding: 4rem 2rem;
-            border: 3px dashed;
+            border: 3px dashed #00bcd4;
             border-radius: 15px;
             cursor: pointer;
             position: relative;
@@ -70,12 +67,20 @@ layout: page
             animation: 
                 border-glow 3s linear infinite,
                 container-float 6s ease-in-out infinite;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .upload-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #00bcd4, 0 0 60px #e94560;
         }
 
         @keyframes border-glow {
-            0% { border-color: #ff00ff; }
-            50% { border-color: #00ffff; }
-            100% { border-color: #ff00ff; }
+            0% { border-color: #00bcd4; }
+            50% { border-color: #e94560; }
+            100% { border-color: #00bcd4; }
         }
 
         @keyframes container-float {
@@ -87,7 +92,7 @@ layout: page
             content: '';
             position: absolute;
             inset: -5px;
-            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            background: linear-gradient(45deg, #e94560, #00bcd4, #e94560);
             z-index: -1;
             animation: rotate 20s linear infinite;
             opacity: 0.3;
@@ -98,7 +103,7 @@ layout: page
             100% { transform: rotate(360deg); }
         }
 
-        /* Trippy Text */
+        /* Modern Text */
         #upload-text {
             font-size: 1.5rem;
             animation: text-vibrate 0.1s linear infinite;
@@ -112,24 +117,30 @@ layout: page
             75% { transform: translate(1px,-1px); }
         }
 
-        /* Psychedelic Image Preview */
+        /* Modern Image Preview */
         #image-preview {
             display: none;
             max-width: 80%;
             margin: 2rem auto;
             border-radius: 15px;
-            border: 3px solid;
+            border: 3px solid #00bcd4;
             box-shadow: 
-                0 0 30px #00ffff88,
-                0 0 60px #ff00ff88;
+                0 0 30px #00bcd488,
+                0 0 60px #e9456088;
             animation: 
                 preview-glow 2s ease-in-out infinite,
                 preview-float 4s ease-in-out infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #image-preview:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px #00bcd4, 0 0 100px #e94560;
         }
 
         @keyframes preview-glow {
-            0%, 100% { border-color: #00ffff; }
-            50% { border-color: #ff00ff; }
+            0%, 100% { border-color: #00bcd4; }
+            50% { border-color: #e94560; }
         }
 
         @keyframes preview-float {
@@ -137,12 +148,11 @@ layout: page
             50% { transform: translateY(-10px); }
         }
 
-        /* Mind-Bending Buttons */
-        #analyze-btn {
-            display: none;
+        /* Modern Buttons */
+        #analyze-btn, .action-button {
             padding: 12px 30px;
             margin: 1rem auto;
-            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            background: linear-gradient(45deg, #e94560, #00bcd4);
             border: none;
             border-radius: 8px;
             color: white;
@@ -151,6 +161,14 @@ layout: page
             position: relative;
             overflow: hidden;
             animation: button-pulse 2s ease-in-out infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        #analyze-btn:hover, .action-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #e94560, 0 0 40px #00bcd4;
         }
 
         @keyframes button-pulse {
@@ -158,17 +176,17 @@ layout: page
             50% { transform: scale(1.05); }
         }
 
-        #analyze-btn::before {
+        #analyze-btn::before, .action-button::before {
             content: '';
             position: absolute;
             inset: -5px;
-            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            background: linear-gradient(45deg, #e94560, #00bcd4, #e94560);
             z-index: -1;
             animation: rotate 20s linear infinite;
             opacity: 0.5;
         }
 
-        /* Trippy Loading */
+        /* Modern Loading */
         #loading {
             display: none;
             font-size: 1.5rem;
@@ -183,7 +201,7 @@ layout: page
             50% { opacity: 0.5; }
         }
 
-        /* Fractal Result */
+        /* Modern Result */
         #result {
             font-size: 1.8rem;
             margin: 20px 0;
@@ -193,15 +211,15 @@ layout: page
         }
 
         @keyframes text-glow {
-            0%, 100% { text-shadow: 0 0 15px #00ffcc; }
-            50% { text-shadow: 0 0 30px #ff00ff; }
+            0%, 100% { text-shadow: 0 0 15px #00bcd4; }
+            50% { text-shadow: 0 0 30px #e94560; }
         }
 
-        /* Psych Particles */
+        /* Interactive Particles */
         .particle {
             position: absolute;
             pointer-events: none;
-            background: radial-gradient(circle, #00ffff 0%, transparent 70%);
+            background: radial-gradient(circle, #00bcd4 0%, transparent 70%);
             animation: particle-fly 2s linear forwards;
         }
 
@@ -216,53 +234,293 @@ layout: page
             }
         }
 
-        /* Trippy Reset Button */
-        .action-button {
-            padding: 12px 30px;
-            background: linear-gradient(45deg, #ff00ff, #00ffff);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
+        /* Home Page Specific Styles */
+        .app-container {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .action-button::before {
+        .app-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: border-glow 3s linear infinite;
+            border: 2px solid #00bcd4;
+        }
+
+        .celebrities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .celebrity-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: border-glow 3s linear infinite;
+            border: 2px solid #00bcd4;
+        }
+
+        .celebrity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .celebrity-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #00bcd4;
+            transition: transform 0.3s ease;
+            animation: preview-glow 2s ease-in-out infinite;
+        }
+
+        .celebrity-card:hover .celebrity-image {
+            transform: scale(1.1);
+        }
+
+        .celebrity-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .celebrity-info {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-family: 'Audiowide', cursive;
+            font-size: 2rem;
+            margin: 2rem 0;
+            text-shadow: 0 0 10px #00bcd4;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
             content: '';
             position: absolute;
-            inset: -5px;
-            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
-            z-index: -1;
-            animation: rotate 20s linear infinite;
-            opacity: 0.3;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #e94560, #00bcd4);
+            border-radius: 3px;
+        }
+
+        /* Navigation Controls */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-tab {
+            padding: 12px 30px;
+            margin: 0 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #00bcd4;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(45deg, #e94560, #00bcd4);
+            box-shadow: 0 0 20px #00bcd488;
+        }
+
+        .nav-tab:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Recognize page specific */
+        .recognizer-container {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>🌌 Bangladeshi Celebrity Face Recognizer 🌀</h1>
-
-    <div class="upload-container" id="uploadContainer">
-        <div id="upload-text">DRAG AND DROP IMAGE OR CLICK TO UPLOAD</div>
-        <input type="file" id="imageInput" accept="image/*" hidden>
-        <img id="image-preview" src="#" alt="Uploaded image preview" style="display: none;">
+    <div class="nav-tabs">
+        <div class="nav-tab" id="home-tab">HOME</div>
+        <div class="nav-tab" id="recognizer-tab">RECOGNIZER</div>
     </div>
 
-    <button id="analyze-btn" aria-label="Start analyzing">🚀 START ANALYZING</button>
-    
-    <div id="loading">🌀 Analyzing the image... Please wait 🌠</div>
-    <div id="result"></div>
+    <!-- Home Page Content -->
+    <h2 class="text-2xl md:text-4xl font-semibold mb-6">Recognized Celebrities</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Afran Nisho" class="mx-auto rounded-full mb-4" height="150" src="Afran_Nisho.jpg" width="150"/>
+            <p class="text-xl font-semibold">Afran Nisho</p>
+            <p class="text-sm">Afran Nisho is a popular Bangladeshi actor known for his work in television dramas and films.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Afsana Mimi" class="mx-auto rounded-full mb-4" height="150" src="Afsana_Mimi.jpg" width="150"/>
+            <p class="text-xl font-semibold">Afsana Mimi</p>
+            <p class="text-sm">Afsana Mimi is a renowned Bangladeshi actress, director, and producer, known for her contributions to television and film.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Arfin Shuvoo" class="mx-auto rounded-full mb-4" height="150" src="Arifin_Shuvo.jpg" width="150"/>
+            <p class="text-xl font-semibold">Arfin Shuvoo</p>
+            <p class="text-sm">Arfin Shuvoo is a Bangladeshi actor and model, known for his roles in films and television dramas.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Ayub Bachchu" class="mx-auto rounded-full mb-4" height="150" src="Ayub_Bachchu.jpeg" width="150"/>
+            <p class="text-xl font-semibold">Ayub Bachchu</p>
+            <p class="text-sm">Ayub Bachchu was a legendary Bangladeshi rock musician, guitarist, and singer-songwriter.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Chanchal Chowdhury" class="mx-auto rounded-full mb-4" height="150" src="Canchal.jpg" width="150"/>
+            <p class="text-xl font-semibold">Chanchal Chowdhury</p>
+            <p class="text-sm">Chanchal Chowdhury is a versatile Bangladeshi actor known for his work in television, film, and theater.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Dr. Muhammad Yunus" class="mx-auto rounded-full mb-4" height="150" src="Muhammad_Yunus.jpg" width="150"/>
+            <p class="text-xl font-semibold">Dr. Muhammad Yunus</p>
+            <p class="text-sm">Dr. Muhammad Yunus is a Nobel Peace Prize-winning economist and founder of the Grameen Bank.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Fazle Hasan Abed" class="mx-auto rounded-full mb-4" height="150" src="Sir_Fazle_Hasan_Abed.jpg" width="150"/>
+            <p class="text-xl font-semibold">Fazle Hasan Abed</p>
+            <p class="text-sm">Fazle Hasan Abed was the founder of BRAC, one of the world's largest non-governmental organizations.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Humayun Ahmed" class="mx-auto rounded-full mb-4" height="150" src="Humayun_Ahmed.jpg" width="150"/>
+            <p class="text-xl font-semibold">Humayun Ahmed</p>
+            <p class="text-sm">Humayun Ahmed was a celebrated Bangladeshi author, dramatist, screenwriter, and filmmaker.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of James (Nagar Baul)" class="mx-auto rounded-full mb-4" height="150" src="James.jpeg" width="150"/>
+            <p class="text-xl font-semibold">James (Nagar Baul)</p>
+            <p class="text-sm">James, also known as Nagar Baul, is a prominent Bangladeshi rock singer, guitarist, and composer.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Joya Ahsan" class="mx-auto rounded-full mb-4" height="150" src="joya_ahsan.jpeg" width="150"/>
+            <p class="text-xl font-semibold">Joya Ahsan</p>
+            <p class="text-sm">Joya Ahsan is a renowned Bangladeshi actress and producer, known for her work in both Bangladeshi and Indian cinema.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Mashrafe Bin Mortaza" class="mx-auto rounded-full mb-4" height="150" src="mashrafe.jpeg" width="150"/>
+            <p class="text-xl font-semibold">Mashrafe Bin Mortaza</p>
+            <p class="text-sm">Mashrafe Bin Mortaza is a former captain of the Bangladesh national cricket team and a prominent cricketer.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Mizanur Rahman Azhari" class="mx-auto rounded-full mb-4" height="150" src="azhari.jpeg" width="150"/>
+            <p class="text-xl font-semibold">Mizanur Rahman Azhari</p>
+            <p class="text-sm">Mizanur Rahman Azhari is a well-known Islamic scholar and speaker in Bangladesh.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Mostofa Sarwar Farooki" class="mx-auto rounded-full mb-4" height="150" src="faruki.jpeg" width="150"/>
+            <p class="text-xl font-semibold">Mostofa Sarwar Farooki</p>
+            <p class="text-sm">Mostofa Sarwar Farooki is a Bangladeshi film director, screenwriter, and producer, known for his unique storytelling style.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Sabina Khatun" class="mx-auto rounded-full mb-4" height="150" src="sabina khatun_forward.png" width="150"/>
+            <p class="text-xl font-semibold">Sabina Khatun</p>
+            <p class="text-sm">Sabina Khatun is a prominent Bangladeshi footballer, known for her contributions to women's football in Bangladesh.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Sabina Yasmin" class="mx-auto rounded-full mb-4" height="150" src="sabina_yesmin.jpg" width="150"/>
+            <p class="text-xl font-semibold">Sabina Yasmin</p>
+            <p class="text-sm">Sabina Yasmin is a legendary Bangladeshi playback singer, known for her melodious voice and numerous hit songs.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Shakib Al Hasan" class="mx-auto rounded-full mb-4" height="150" src="sakib_al_hasan.jpeg" width="150"/>
+            <p class="text-xl font-semibold">Shakib Al Hasan</p>
+            <p class="text-sm">Shakib Al Hasan is a world-renowned Bangladeshi cricketer, known for his all-round performance in international cricket.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Shakib Khan" class="mx-auto rounded-full mb-4" height="150" src="sakib_khan.jpg" width="150"/>
+            <p class="text-xl font-semibold">Shakib Khan</p>
+            <p class="text-sm">Shakib Khan is a leading Bangladeshi film actor and producer, known for his work in Dhallywood cinema.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Tahsan Khan" class="mx-auto rounded-full mb-4" height="150" src="tahsan.jpg" width="150"/>
+            <p class="text-xl font-semibold">Tahsan Khan</p>
+            <p class="text-sm">Tahsan Khan is a popular Bangladeshi musician, actor, and model, known for his versatile talents.</p>
+        </div>
+        <div class="bg-white bg-opacity-10 p-4 rounded-lg shadow-lg text-center">
+            <img alt="Portrait of Tamim Iqbal" class="mx-auto rounded-full mb-4" height="150" src="Tamim_Iqbal.webp" width="150"/>
+            <p class="text-xl font-semibold">Tamim Iqbal</p>
+            <p class="text-sm">Tamim Iqbal is a prominent Bangladeshi cricketer, known for his aggressive batting style and leadership.</p>
+        </div>
+    </div>
 
-    <div class="button-group">
-        <button class="action-button" id="resetBtn">🔄 CHECK ANOTHER IMAGE</button>
-        <a href="{{ site.baseurl }}/" class="action-button">← BACK TO HOME</a>
+    <!-- Recognizer Page Content -->
+    <div class="recognizer-container" id="recognizer-content">
+        <h1>🌌 Bangladeshi Celebrity Face Recognizer 🌀</h1>
+
+        <div class="upload-container" id="uploadContainer">
+            <div id="upload-text">DRAG AND DROP IMAGE OR CLICK TO UPLOAD</div>
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <img id="image-preview" src="#" alt="Uploaded image preview" style="display: none;">
+        </div>
+
+        <button id="analyze-btn" aria-label="Start analyzing">🚀 START ANALYZING</button>
+        
+        <div id="loading">🌀 Analyzing the image... Please wait 🌠</div>
+        <div id="result"></div>
+
+        <div class="button-group">
+            <button class="action-button" id="resetBtn">🔄 CHECK ANOTHER IMAGE</button>
+            <button class="action-button" id="go-home-btn">← BACK TO HOME</button>
+        </div>
     </div>
 
     <script type="module">
         import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
-    
+        
+        // Navigation control
+        const homeTab = document.getElementById('home-tab');
+        const recognizerTab = document.getElementById('recognizer-tab');
+        const homeContent = document.getElementById('home-content');
+        const recognizerContent = document.getElementById('recognizer-content');
+        const tryRecognizerBtn = document.getElementById('try-recognizer-btn');
+        const goHomeBtn = document.getElementById('go-home-btn');
+        
+        // Navigation functions
+        function showHome() {
+            homeContent.style.display = 'block';
+            recognizerContent.style.display = 'none';
+            homeTab.classList.add('active');
+            recognizerTab.classList.remove('active');
+        }
+        
+        function showRecognizer() {
+            homeContent.style.display = 'none';
+            recognizerContent.style.display = 'block';
+            homeTab.classList.remove('active');
+            recognizerTab.classList.add('active');
+        }
+        
+        // Set up navigation event listeners
+        homeTab.addEventListener('click', showHome);
+        recognizerTab.addEventListener('click', showRecognizer);
+        tryRecognizerBtn.addEventListener('click', showRecognizer);
+        goHomeBtn.addEventListener('click', showHome);
+        
+        // Initialize with home page active
+        showHome();
+        
+        // Recognizer functionality
         const imageInput = document.getElementById('imageInput');
         const imagePreview = document.getElementById('image-preview');
         const resultDiv = document.getElementById('result');
@@ -274,7 +532,7 @@ layout: page
     
         let selectedFile = null;
     
-        // Create psychedelic particles
+        // Create interactive particles
         function createParticles(x, y) {
             for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
@@ -293,17 +551,17 @@ layout: page
         // Drag and drop handlers
         uploadContainer.addEventListener('dragover', (e) => {
             e.preventDefault();
-            uploadContainer.style.borderColor = '#00ffff';
+            uploadContainer.style.borderColor = '#00bcd4';
             createParticles(e.clientX, e.clientY);
         });
     
         uploadContainer.addEventListener('dragleave', () => {
-            uploadContainer.style.borderColor = '#ff00ff';
+            uploadContainer.style.borderColor = '#e94560';
         });
     
         uploadContainer.addEventListener('drop', (e) => {
             e.preventDefault();
-            uploadContainer.style.borderColor = '#ff00ff';
+            uploadContainer.style.borderColor = '#e94560';
             handleFile(e.dataTransfer.files[0]);
             createParticles(e.clientX, e.clientY);
         });
