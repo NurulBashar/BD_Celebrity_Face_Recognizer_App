@@ -44,7 +44,7 @@ To ensure precision and reliability, the system currently supports 19 celebritie
 
 ## 🔗 Live Demo & Resources
 [![Hugging Face Spaces](https://img.shields.io/badge/HuggingFace-App-blue?logo=huggingface)](https://huggingface.co/spaces/Bashar306/Face_recognition)  
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen?logo=github)](https://nurulbashar.github.io/BD_Celebrity_Face_Recognizer_App/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen?logo=github)](https://nurulbashar.github.io/BD_Celebrity_Face_Recognizer_WebApp/)
 [![Data Drive](https://img.shields.io/badge/Data-Drive-yellow?logo=google-drive)](https://drive.google.com/drive/folders/1NIWH9alphiiRQ4iEoVDN8Xh5zb2WVx2X?usp=drive_link)  
 [![Test Images](https://img.shields.io/badge/Test%20Images-Drive-orange?logo=google-drive)](https://drive.google.com/drive/folders/13VrOatFw87CqryCL-gUe8dkJU-Z-3ViN?usp=drive_link)  
  
